@@ -105,24 +105,26 @@ private:
 
     void printHelper(Node* root, string indent, bool last)
     {
-		if (root != nullptr)
+	if (root != nullptr)
         {
-			cout << indent;
-			if (last) {
-				cout << "+----";
-				indent += "     ";
-			}
-			else {
-				cout << "|----";
-				indent += "|    ";
-			}
-
-			cout << root->data << endl;
-
-			printHelper(root->left, indent, false);
-			printHelper(root->right, indent, true);
+		cout << indent;
+		if (last)
+		{
+			cout << "+----";
+			indent += "     ";
 		}
+		else
+		{
+			cout << "|----";
+			indent += "|    ";
+		}
+
+		cout << root->data << endl;
+
+		printHelper(root->left, indent, false);
+		printHelper(root->right, indent, true);
 	}
+}
 
     void cleanUp(Node** root)
     {
